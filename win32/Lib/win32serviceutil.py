@@ -646,7 +646,7 @@ def QueryServiceStatus(serviceName, machine=None):
 def usage():
     try:
         fname = os.path.split(sys.argv[0])[1]
-    except:
+    except (IndexError, AttributeError):
         fname = sys.argv[0]
     print(
         "Usage: '%s [options] install|update|remove|start [...]|stop|restart [...]|debug [...]'"
